@@ -30,7 +30,7 @@ MySQL:
 
 # Let players who never joined before vote
 # Recommend: False (Will prevent creating random user data)
-AllowUnjoined: false
+AllowUnjoined: true
 
 # ------------------------------------------------
 # VoteReminding
@@ -247,7 +247,7 @@ Format:
   
   # Time Format
   # See https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
-  TimeFormat: 'EEE, d MMM yyyy HH:mm'
+  TimeFormat: 'EEE, dd MMM yyyy HH:mm:ss'
   
   TimeFormats:
     Day: 'Day'
@@ -312,7 +312,7 @@ Format:
   
 # Enable command for last month gui
 # Requires restart to take effect
-LastMonthGUI: false
+LastMonthGUI: true
   
 # Configure GUI's here
 # Note: Slots start at 0 instead of 1, max slot is 53 (don't go over) (E.g: last slot in first row of inventory is 8)
@@ -330,7 +330,7 @@ GUI:
         Name: '&4URL'
         # You can set skulls of the player using the following
         # Remove the # to enable
-        #Skull: '%Player%'
+        Skull: '%Player%'
     Next:
       Item:
         Material: 'COMPASS'
@@ -405,7 +405,7 @@ GUI:
       Amount: 1
     URLText: '%VoteUrl%'
     
-  VoteRewardBackButton: false
+  VoteRewardBackButton: true
   # Customize /vote reward
   # Show players what you get when you vote on each site
   VoteReward:
@@ -442,7 +442,7 @@ GUI:
     BackButton: true
   VoteTop:
     Name: 'VoteTop %topvoter%'
-    BackButton: false
+    BackButton: true
     Item:
       Name: '&3&l%position%: &3%player%'
       Lore: '&3&lVotes: &3%votes%'
@@ -485,7 +485,7 @@ GUI:
     AllTimeTotal:
       Item:
         Material: 'CLOCK'
-        Name: '&cAllTime Total'
+        Name: '&cAll Time Total'
         Lore: '&c&lTotal: &c%Total%'
         Amount: 1
   VoteBest:
@@ -510,7 +510,7 @@ GUI:
         Amount: 1
   VoteStreak:
     Name: 'VoteStreak: %player%'
-    BackButton: false
+    BackButton: true
     CurrentDayStreak:
       Item:
         Material: 'CLOCK'
@@ -576,7 +576,7 @@ Shop:
     Name: '&4Buy A Diamond'
     # You can set skulls of the player using the following
     # Remove the # to enable
-    #Skull: '%Player%'
+    Skull: '%Player%'
     Lore:
     - '&c&lCost: &c3 Voting Points'
     # Number of voting points this cost
@@ -621,12 +621,12 @@ Cumulative:
   # Number be be around ' (E.g. '1')
   # Can have multiple listed here
   '20':
-    Enabled: false
+    Enabled: true
     # Wether or not votes must be made in same day/week
     # Useful if you want to require a certain number of voting sites to be voted on
     # for a daily/weekly reward instead of all of them
-    VotesInSameDay: false
-    VotesInSameWeek: false
+    VotesInSameDay: true
+    VotesInSameWeek: true
     Rewards: 
       Messages:
         Player: '&aYou got %cumulative% cumulative votes!'
@@ -672,7 +672,7 @@ MileStones:
   # Number be around ' (E.g. '1')
   # Can have multiple listed here
   '20':
-    Enabled: false
+    Enabled: true
     Rewards: 
       Messages:
         Player: '&aYou got %milestone% milestone votes!'
@@ -685,7 +685,7 @@ VoteStreak:
     # Add a - to give a reward for every multiple (e.g. 2- = 2,4,6,8, and so on)
     '2':
       # Enabled or not
-      Enabled: false
+      Enabled: true
       # Rewards to give
       Rewards:
         Messages:
@@ -695,7 +695,7 @@ VoteStreak:
     # Requires atleast one vote per week
     '2':
       # Enabled or not
-      Enabled: false
+      Enabled: true
       # Rewards to give
       Rewards:
         Messages:
@@ -705,14 +705,14 @@ VoteStreak:
     # Requires atleast 1 vote per month
     '2':
       # Enabled or not
-      Enabled: false
+      Enabled: true
       # Rewards to give
       Rewards:
         Messages:
           Player: "&aYou voted for %Streak% %Type%'s in a row!"
   Requirement:
     # Require certain percentage of votes
-    UsePercentage: false
+    UsePercentage: true
     # Percentage requirements of votes
     # 50 = %50
     Day: 50
@@ -757,15 +757,15 @@ TopVoterAwardsTies: true
 LoadTopVoter:
   AllTime: true
   Monthly: true
-  Weekly: false
-  Daily: false
+  Weekly: true
+  Daily: true
 
 # When top voter awards are given (even if there are none listed) it will store top voters
 # Files will created in TopVoters folder.
 StoreTopVoters:
   Monthly: true
-  Weekly: false
-  Daily: false
+  Weekly: true
+  Daily: true
 
 EnableMonthlyAwards: true
 # Rewards to give
@@ -781,7 +781,7 @@ MonthlyAwards:
       Messages:
         Player: '&aYou came in second place in %TopVoter%!'
     
-EnableWeeklyAwards: false
+EnableWeeklyAwards: true
 # Rewards to give on weekly top voter
 WeeklyAwards:
   # Position. 1 is first in top voter, 2 is second, etc...
@@ -794,7 +794,7 @@ WeeklyAwards:
       Messages:
         Player: '&aYou came in second place in %TopVoter%!'
     
-EnableDailyRewards: false
+EnableDailyRewards: true
 # Rewards to give on daily top voter
 DailyAwards:
   # Position. 1 is first in top voter, 2 is second, etc...
@@ -834,21 +834,21 @@ ClickSound:
 LimitMonthlyVotes: false
 
 # Debug
-Debug: false
+Debug: true
 
 # Extra Debug
 # Only needed in extreme cases
-ExtraDebug: false
+ExtraDebug: true
 
 # Debug info ingame
 # Players with permission "VotingPlugin.Debug"
 # will see debug info if debug is true
-DebugInGame: false
+DebugInGame: true
 
 # Will log debug messages to VotingPlugin/Log/log.txt
 # Requires Debug to be on
 # Only needed for extra cases
-#LogDebugToFile: false
+LogDebugToFile: true
 
 # Options for request api
 # Current methods
@@ -863,13 +863,13 @@ RequestAPI:
 # Whether or not to log every vote to a file
 # Use this if you wanna track player votes
 # Not recommended though
-LogVotesToFile: false
+LogVotesToFile: true
 
 # Only update in the background when needed when set to false
-AlwaysUpdate: false
+AlwaysUpdate: true
 
 # Update in the background only if players are online
-UpdateWithPlayersOnlineOnly: false
+UpdateWithPlayersOnlineOnly: true
 
 # Delay between background updates like signs and more
 # Default: 3 Minutes
@@ -917,7 +917,7 @@ AutoDownload: false
 DisableUpdateChecking: false
 
 # Allow transfer of vote points
-AllowVotePointTransfers: false
+AllowVotePointTransfers: true
 
 # Disable this on a hub server for example
 # Still processes rewards for offline rewards (just won't give any)
@@ -936,7 +936,7 @@ WaitUntilLoggedIn: true
 
 # Preload skulls to improve performance
 # If false, skulls will be cached as they are used
-PreloadSkulls: false
+PreloadSkulls: true
 
 # ---------------------------------------------------------
 # Mysql cache options
@@ -963,7 +963,7 @@ UseVaultPermissions: false
 
 # Whether or not to disable checking names on mojang, disable if you hit the rate limit
 # Shouldn't make a noticeable impact if set to false
-#CheckNameMojang: false
+CheckNameMojang: true
 
 # Shouldn't need to change this
 #AutoKillInvs: true
@@ -971,7 +971,7 @@ UseVaultPermissions: false
 # Used in special cases
 # Much slower, but may work better
 # Not recommended in newer versions
-#AlternateUUIDLookup: false
+AlternateUUIDLookup: true
 
 # Disable checking on world change
 # May improve performance
