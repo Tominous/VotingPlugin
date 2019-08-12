@@ -131,7 +131,7 @@ public class Main extends AdvancedCorePlugin {
 	private boolean update = true;
 
 	@Getter
-	private boolean updateStarted = false;
+	private boolean updateStarted = true;
 
 	/**
 	 * Check votifier.
@@ -172,7 +172,7 @@ public class Main extends AdvancedCorePlugin {
 			HashMap<User, HashMap<String, String>> data = new HashMap<User, HashMap<String, String>>();
 			getOptions().setStorageType(from);
 			loadUserAPI(getOptions().getStorageType());
-			// setStorageType(to);
+			 setStorageType(to);
 
 			if (getStorageType().equals(UserStorage.MYSQL) && getMysql() != null) {
 				getMysql().clearCache();
@@ -422,7 +422,7 @@ public class Main extends AdvancedCorePlugin {
 			metrics.start();
 			plugin.debug("Loaded Metrics");
 		} catch (IOException e) {
-			plugin.getLogger().info("Can't submit metrics stats");
+			plugin.getLogger().info("Can't submit metrics statistics");
 		}
 
 		BStatsMetrics metrics = new BStatsMetrics(this);
@@ -947,8 +947,8 @@ public class Main extends AdvancedCorePlugin {
 		// /vote, /v
 		getCommand("vote").setExecutor(new CommandVote(this));
 		getCommand("vote").setTabCompleter(new VoteTabCompleter());
-		// getCommand("v").setExecutor(new CommandVote(this));
-		// getCommand("v").setTabCompleter(new VoteTabCompleter());
+		 getCommand("v").setExecutor(new CommandVote(this));
+		 getCommand("v").setTabCompleter(new VoteTabCompleter());
 
 		// /adminvote, /av
 		getCommand("adminvote").setExecutor(new CommandAdminVote(this));
@@ -1094,8 +1094,8 @@ public class Main extends AdvancedCorePlugin {
 								if (uuid != null && !uuid.isEmpty()) {
 									User user = UserManager.getInstance().getVotingPluginUser(new UUID(uuid));
 									users.add(user);
-									// extraDebug("Loading " + uuid);
-									// java.lang.Thread.sleep(5000);
+									 extraDebug("Loading " + uuid);
+									 java.lang.Thread.sleep(5000);
 								}
 							}
 							update = false;
